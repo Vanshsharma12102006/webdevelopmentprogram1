@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav id="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Sections -->
+    <section id="home">
+        <h1>Home</h1>
+    </section>
+
+    <section id="about">
+        <h1>About</h1>
+    </section>
+
+    <section id="services">
+        <h1>Services</h1>
+    </section>
+
+    <section id="portfolio">
+        <h1>Portfolio</h1>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+//style and script file
+// Change navbar style on scroll
+window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+style file-
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Fixed Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 40px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+/* Navbar when scrolled */
+#navbar.scrolled {
+    background: #222;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    background-color: #00bcd4;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Sections for scrolling */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+#home { background: #3498db; }
+#about { background: #2ecc71; }
+#services { background: #9b59b6; }
+#portfolio { background: #e67e22; }
+#contact { background: #e74c3c; }
